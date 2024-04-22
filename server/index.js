@@ -14,6 +14,10 @@ const antelopes = require("./data/antelopes.json"); // Import antelopes data fro
 //   res.json(data);
 // });
 
+app.get("/", (req, res) => {
+  res.status(200).send("Server is running!");
+});
+
 // Endpoint to get all antelopes data
 app.get("/api/all-antelopes", (req, res) => {
   // Send the antelopes data to the client
@@ -42,3 +46,5 @@ app.get("/api/all-antelopes/:name", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
 });
+
+module.exports = app; // Export the Express app
